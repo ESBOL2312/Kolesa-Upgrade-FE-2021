@@ -13,12 +13,12 @@ body {
 }
 
 :root {
-    --black-primary: '#1C1819';
-    --text-gray: '#888B94';
-    --blue-primary: '#2A81DD';
-    --blue-lighter: '#D6ECFB';
+    --black-primary: rgb(28 24 25);
+    --text-gray: rgb(136 139 148);
+    --blue-primary: rgb(42 129 221);
+    --blue-lighter: rgb(214 236 251);
     --gary-border-color: rgba(28, 24, 25, 0.1);
-    --white: '#ffffff';
+    --white: rgb(255 255 255);
 }
 
 .container {
