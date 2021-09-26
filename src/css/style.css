@@ -21,7 +21,7 @@ body {
     --black-primary: rgb(28 24 25);
     --text-gray: rgb(136 139 148);
     --blue-primary: rgb(42 129 221);
-    --blue-lighter: rgb(214 236 251);
+    --blue-lighter: '#D6ECFB';
     --gary-border-color: rgba(28, 24, 25, 0.1);
     --white: rgb(255 255 255);
 }
