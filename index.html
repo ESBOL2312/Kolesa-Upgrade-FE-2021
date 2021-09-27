@@ -5,9 +5,136 @@
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/reset.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <!-- <div id="app"></div> -->
+    <div class="container">
+    <div class="modal-container">
+      <div class="modal d-flex">
+        <button class="modal__close" type="button">
+          <img src="/src/assets/close-icon.svg" width="17" height="17" alt="close icon" >
+        </button>
+        <div class="modal__left-side">
+          <div class="modal__left-side__media-block">
+            <img src="/src/assets/image 7.png" class="modal__left-side__media-block__product-img" alt="Футболка Эволюционируй или сдохни" width="330" height="330">
+            <div class="slide-block d-flex">
+                <img src="/src/assets/img-1.png" class="slide-item active" alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
+            </div>
+          </div>    
+        </div>
+        <div class="modal__right-side">
+          <div class="modal__right-side__title">
+            <h2 class="title-1 mb-8 fw-4">
+              Футболка "Эволюционируй или сдохни"
+            </h2>
+          </div>
+          <div class="action-block d-flex mb-24">
+            <div>
+              <h2 class="title-1 mb-8 fw-6">
+                100 баллов
+              </h2>
+              <button class="btn primary-btn" type="button">
+                Заказать
+              </button>
+            </div>
+            <div>
+              <div class="badge badge-2">
+                <div class="d-flex balance">
+                  <div>
+                    <p class="balance__label">Твой баланс:</p>
+                    <span class="balance__count">
+                      3 945 баллов
+                    </span>
+                  </div>
+                  <img src="/src/assets/cartt.svg" width="40" alt="Иконка пакетов" class="balance__icon">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-variant">
+            <div class="product-variant__color mb-24">
+              <h4 class="title-3 mb-8 fw-4">
+                Цвета:
+              </h4>
+              <div class="product-variant__color__variants">
+                <input  class="custom-radio" type="radio" id="colorChoice1" name="contact" value="blue">
+                <label class="radio-choice-btn" for="colorChoice1">
+                  <div class="radio-choice-btn__color mr-8" style="background:#00458A">
+                  </div>
+                  <span class="radio-choice-btn__text">Синий</span>
+                </label>
+                <input class="custom-radio"  type="radio" id="colorChoice2" name="contact" value="dimgray">
+                <label class="radio-choice-btn" for="colorChoice2">
+                  <div class="radio-choice-btn__color mr-8" style="background:#EFE8D8">
+                  </div>
+                  <span class="radio-choice-btn__text">Бежевый</span>
+                </label>
+                <input class="custom-radio"  type="radio" id="colorChoice3"
+                       name="contact" value="gray">
+                <label class="radio-choice-btn" for="colorChoice3">
+                  <div class="radio-choice-btn__color mr-8" style="background:#D4D4DA">
+                  </div>
+                  <span class="radio-choice-btn__text">Серый</span>
+                </label>
+              </div>
+            </div>
+            <div class="product-variant__color mb-24">
+              <h4 class="title-3 mb-8 fw-4">
+                Размер:
+              </h4>
+              <div class="product-variant__color__variants">
+                <input  class="custom-radio" type="radio" id="sizeChoice1" name="contact" value="s">
+                <label class="radio-choice-btn " for="sizeChoice1">
+                  <span class="radio-choice-btn__text mr-8 ml-8">S</span>
+                </label>
+                <input class="custom-radio"  type="radio" id="sizeChoice2" name="contact" value="m">
+                <label class="radio-choice-btn " for="sizeChoice2">
+                  <span class="radio-choice-btn__text mr-8 ml-8">M</span>
+                </label>
+                <input class="custom-radio"  type="radio" id="sizeChoice3"
+                       name="contact" value="l">
+                <label class="radio-choice-btn" for="sizeChoice3">
+                  
+                  <span class="radio-choice-btn__text mr-8 ml-8">L</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="product-detail">
+            <div class="info-block">
+              <h4 class="info-block__title title-3">
+                Детали:
+              </h4>
+              <p class="info-block__description">
+                Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%
+              </p>
+            </div>
+            <div class="info-block">
+              <h4 class="info-block__title title-3">
+                Как выбрать размер:
+              </h4>
+              <p class="info-block__description">
+                Написать дяде Рику для уточнения.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
