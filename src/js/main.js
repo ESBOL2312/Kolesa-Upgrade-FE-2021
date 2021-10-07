@@ -1,5 +1,3 @@
-import '../css/style.css';
+import '../css/main.scss';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello, Yesbol!</h1>
-`;
+document.querySelector('#app');

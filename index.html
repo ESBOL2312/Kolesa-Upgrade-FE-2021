@@ -1,140 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link href="https://fonts.googleapis.com"> 
-    <link href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/css/reset.css" />
-  </head>
-  <body>
-    <!-- <div id="app"></div> -->
-    <div class="container">
-    <div class="modal-container">
-      <div class="modal d-flex">
-        <button class="modal__close" type="button">
-          <img src="/src/assets/close-icon.svg" width="17" height="17" alt="close icon" >
-        </button>
-        <div class="modal__left-side">
-          <div class="modal__left-side__media-block">
-            <img src="/src/assets/image 7.png" class="modal__left-side__media-block__product-img" alt="Футболка Эволюционируй или сдохни" width="330" height="330">
-            <div class="slide-block d-flex">
-                <img src="/src/assets/img-1.png" class="slide-item active" alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-1.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-                <img src="/src/assets/img-2.png" class="slide-item " alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
-            </div>
-          </div>    
-        </div>
-        <div class="modal__right-side">
-          <div class="modal__right-side__title">
-            <h2 class="title-1 mb-8 fw-4">
-              Футболка "Эволюционируй или сдохни"
-            </h2>
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="src/css/main_banner.css">-->
+    <title>Главная с баннером</title>
+</head>
+<body id="app">
+<div class="container">
+<header class="header">
+    <div class="header__block">
+    <div>
+        <img src="src/assets/KolesaGroup.png"  height="35" width="215" alt="Kolesa logo">
+    </div>
+    <div class="header__search">
+        <label for="search"><div class="header__search__img" type="button" >
+          <img src="src/assets/search-big.svg" alt="search" height="24" width="24">
           </div>
-          <div class="action-block d-flex mb-24">
-            <div>
-              <h2 class="title-1 mb-8 fw-6">
-                100 баллов
-              </h2>
-              <button class="btn primary-btn" type="button">
-                Заказать
-              </button>
+        </label>
+        <input name="search" id="search" class="header__search__input" type="search" placeholder="Поиск">
+    </div>
+    </div>
+    <button class="header__info">
+        <div>
+            <img class="header__avatar" src="src/assets/Mask%20Group.png" alt="avatar" width="44" height="44">
+        </div>
+        <div>
+            <div class="header__name">Мортиджан</div>
+            <div class="header__pts">300 баллов</div>
+        </div>
+    </button>
+</header>
+</div>
+<div class="container">
+<main class="main">
+    <nav class="nav">
+        <div class="nav__block">
+        <a class="nav__link" href="#">Оргсхема</a>
+        <a class="nav__link" href="#">Kolesa <span class="nav__link-bold">Team</span></a>
+        <a class="nav__link nav__link-bold" href="#"><img class="nav__link-active" src="./src/assets/Rectangle%203.svg" alt="active" width="4" height="36">Kolesa Shop</a>
+        <a class="nav__link" href="#">Картина компании</a>
+        <a class="nav__link" href="#">Новости</a>
+        <a class="nav__link" href="#">Education</a>
+        <a class="nav__link" href="#">Guidelines</a>
+        <a class="nav__link" href="#">Библиотека</a>
+        <a class="nav__link" href="#">FAQ</a>
+        </div>
+    </nav>
+    <div class="main__content">
+        <img class="main__banner" src="src/assets/image.jpg" alt="banner" width="1038" height="335">
+        <div class="main__buttons">
+            <button type="button" class="main__btn main__btn-get"><img class="main__btn-image" src="src/assets/plus.svg" alt="plus" height="41" width="40">Получить баллы</button>
+            <button type="button" class="main__btn main__btn-question"><img class="main__btn-image" src="src/assets/question.png" alt="question" width="40" height="41">Как получить баллы?</button>
+            <button type="button" class="main__btn main__btn-gift"><img class="main__btn-image" src="src/assets/gift.png" alt="gift" height="41" width="40">Подарить баллы</button>
+        </div>
+        <div class="main__blockRadio">
+            <div class="main__radio">
+                <input type="radio" id="radio1" name="radio" value="1" checked>
+                <label for="radio1">Все товары</label>
             </div>
-            <div>
-              <div class="badge badge-2">
-                <div class="d-flex balance">
-                  <div>
-                    <p class="balance__label">Твой баланс:</p>
-                    <span class="balance__count">
-                      3 945 баллов
-                    </span>
-                  </div>
-                  <img src="/src/assets/cartt.svg" width="40" alt="Иконка пакетов" class="balance__icon">
+            <div class="main__radio">
+                <input type="radio" id="radio2" name="radio" value="2">
+                <label for="radio2">Одежда</label>
+            </div>
+            <div class="main__radio">
+                <input type="radio" id="radio3" name="radio" value="3">
+                <label for="radio3">Аксессуары</label>
+            </div>
+        </div>
+        <div class="main--clothes">
+            <div class="main--clothes__element">
+                <img src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__new">
+                        NEW
+                    </p>
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="product-variant">
-            <div class="product-variant__color mb-24">
-              <h4 class="title-3 mb-8 fw-4">
-                Цвета:
-              </h4>
-              <div class="product-variant__color__variants">
-                <input  class="custom-radio" type="radio" id="colorChoice1" name="contact" value="blue">
-                <label class="radio-choice-btn" for="colorChoice1">
-                  <div class="radio-choice-btn__color mr-8" style="background:#00458A">
-                  </div>
-                  <span class="radio-choice-btn__text">Синий</span>
-                </label>
-                <input class="custom-radio"  type="radio" id="colorChoice2" name="contact" value="dimgray">
-                <label class="radio-choice-btn" for="colorChoice2">
-                  <div class="radio-choice-btn__color mr-8" style="background:#EFE8D8">
-                  </div>
-                  <span class="radio-choice-btn__text">Бежевый</span>
-                </label>
-                <input class="custom-radio"  type="radio" id="colorChoice3"
-                       name="contact" value="gray">
-                <label class="radio-choice-btn" for="colorChoice3">
-                  <div class="radio-choice-btn__color mr-8" style="background:#D4D4DA">
-                  </div>
-                  <span class="radio-choice-btn__text">Серый</span>
-                </label>
-              </div>
+            <div class="main--clothes__element">
+                <img src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__new">
+                        NEW
+                    </p>
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
             </div>
-            <div class="product-variant__color mb-24">
-              <h4 class="title-3 mb-8 fw-4">
-                Размер:
-              </h4>
-              <div class="product-variant__color__variants">
-                <input  class="custom-radio" type="radio" id="sizeChoice1" name="contact" value="s">
-                <label class="radio-choice-btn " for="sizeChoice1">
-                  <span class="radio-choice-btn__text mr-8 ml-8">S</span>
-                </label>
-                <input class="custom-radio"  type="radio" id="sizeChoice2" name="contact" value="m">
-                <label class="radio-choice-btn " for="sizeChoice2">
-                  <span class="radio-choice-btn__text mr-8 ml-8">M</span>
-                </label>
-                <input class="custom-radio"  type="radio" id="sizeChoice3"
-                       name="contact" value="l">
-                <label class="radio-choice-btn" for="sizeChoice3">
-                  
-                  <span class="radio-choice-btn__text mr-8 ml-8">L</span>
-                </label>
-              </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
             </div>
-          </div>
-          <div class="product-detail">
-            <div class="info-block">
-              <h4 class="info-block__title title-3">
-                Детали:
-              </h4>
-              <p class="info-block__description">
-                Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%
-              </p>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
             </div>
-            <div class="info-block">
-              <h4 class="info-block__title title-3">
-                Как выбрать размер:
-              </h4>
-              <p class="info-block__description">
-                Написать дяде Рику для уточнения.
-              </p>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
             </div>
-          </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
+            <div class="main--clothes__element">
+                <img  src="src/assets/image%204.png" alt="clothes" width="330" height="330">
+                <div class="main--clothes__textBlock">
+                    <p class="main--clothes__pts">220 баллов</p>
+                    <p class="main--clothes__text">Футболка "Эволюционируй или ...</p>
+                    <p class="main--clothes__size">Размеры S/M/L </p>
+                    <button type="button" class="main--clothes__btn">Заказать</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+</main>
     </div>
-    <script type="module" src="/src/js/main.js"></script>
-  </body>
+<footer class="footer">
+<div class="container">
+    <div class="footer__elements">
+        <div class="footer__info">
+            <p class="footer__text">© Kolesa Group</p>
+            <div class="footer__icons">
+                <button class="footer__icons-instagram" type="button"><img src="src/assets/Instagram.svg" alt="instagram" height="24" width="24"></button>
+                <button class="footer__icons-youtube" type="button"><img src="src/assets/YouTube.svg" alt="youtube" height="24" width="24"></button>
+                <button  class="footer__icons-vk" type="button"><img src="src/assets/VK.svg" alt="VK" height="24" width="24"></button>
+            </div>
+        </div>
+        <div class="footer__block">
+        <div class="footer__block__text">
+            <p>Есть идеи что улучшить?<p>Не знаешь, с кем решить проблему?</p> </p>
+        </div>
+        <div>
+            <button class="footer__btn">Написать</button>
+        </div>
+        </div>
+    </div>
+</div>
+</footer>
+</body>
+<script type="module" src="/src/js/main.js"></script>
 </html>
