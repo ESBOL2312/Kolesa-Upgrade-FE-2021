@@ -1,0 +1,67 @@
+@import 'vars';
+
+.nav {
+    &__block {
+        margin: 26px 65px 0 0;
+        width: 215px;
+    }
+
+    &__link {
+        display: block;
+        font-family: $primaryFont;
+        font-style: normal;
+        font-weight: $normalFont;
+        font-size: 16px;
+        line-height: 24px;
+        color: $primaryColor;
+        padding: 7px 0;
+        transition: 0.2s linear;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:hover {
+            color: $navColor;
+        }
+
+        &:focus {
+            display: flex;
+            align-items: center;
+        }
+
+        &-bold {
+            &::after {
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -10px;
+                content: "";
+                width: 4px;
+                background: #2A81DD;
+                border-radius: 10px;
+            }
+            font-weight: $BoldFont;
+            position: relative;
+            &:hover {
+                color: $navColor;
+            }
+
+            &:focus {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &-active {
+            border-radius: 10px;
+            margin-right: 8px;
+
+            &:focus {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
