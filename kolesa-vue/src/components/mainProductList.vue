@@ -1,81 +1,55 @@
 <template>
   <div>
-    <div class="main__blockRadio">
-      <div class="main__radio" v-for="filter in filterList" :key="filter.id">
-        <input
-          type="radio"
-          :id="`radio-${filter.id}`"
-          name="radio"
-          :value="filter.value"
-          checked
-          v-model="displayProductType"
-        />
-        <label :for="`radio-${filter.id}`">{{filter.label}}</label>
-      </div>
-    </div>
+    <super-filter @filterChange="changeFilter" />
     <div class="main--clothes mb-24">
       <div class="main--clothes__element" v-for="product in getCheckedValue" :key="product.id">
         <img
-          :src="product.image.url"
+          :src="product.mainImage"
           alt="clothes"
           width="330"
           height="330"
           style="display:none"
           
         />
-        <div class="main--clothes__imageCover" :style="{ backgroundImage: `url('${product.image.url}')` }">
+        <div class="main--clothes__imageCover" :style="{ backgroundImage: `url('${product.mainImage}')` }">
         </div>
         <div class="main--clothes__textBlock">
-          <p v-if="product.new" class="main--clothes__new">New</p>
-          <p class="main--clothes__pts">{{product.cost}} баллов</p>
+          <p v-if="product.isNew" class="main--clothes__new">New</p>
+          <p class="main--clothes__pts">{{product.price}} баллов</p>
           <p class="main--clothes__text">{{product.title}}</p>
-          <p class="main--clothes__size">Размеры {{product.size}}</p>
-          <button type="button" class="main--clothes__btn" @click="showProductModal"> Заказать</button>
+          <p class="main--clothes__size">Размеры {{product.sizes}}</p>
+          <button type="button" class="main--clothes__btn" @click="showProductModal(product)"> Заказать</button>
         </div>
       </div>
     </div>
-    <super-modal :is-visible="productModalVisible" @closed="closeProductModal"/>
+    <super-modal :productData="modalP" :is-visible="productModalVisible" @closed="closeProductModal"/>
   </div>
 </template>
 <script>
-import productlist from "@/products.json";
 import superModal from "@/components/productModal.vue"
+import superFilter from "@/components/filter.vue"
+import api from '@/api/products.js'
 export default {
   name: "main-product-list",
   data() {
     return {
-        productModalVisible:false,
-      clothes: productlist.clothes,
-      accessories: productlist.accessories,
-      displayProductType: 1,
-      filterList: [
-          {     
-              id:1,
-              label: 'Все товары',
-              value: 1,
-          },
-          {     
-              id:2,
-              label: 'Одежда',
-              value: 2,
-          },
-          {     
-              id:3,
-              label: 'Аксессуары',
-              value: 3,
-          }
-      ]
+      productModalVisible:false,
+      clothes: [],
+      accessories: [],
+      displayProductType: null,
+      modalP: null,
     };
   },
   components:{
-      superModal
+      superModal,
+      superFilter
   },
   computed: {
     getCheckedValue: function () {
       let productList = [];
       if (this.displayProductType === 1) {
         productList = this.accessories.concat(this.clothes).sort((a, b) => {
-          if (a.new === true && b.new === false) {
+          if (a.isNew === true && b.isNew === false) {
             return -1;
           }
 
@@ -93,9 +67,27 @@ export default {
       return productList;
     },
   },
+  mounted (){
+     this.getClothesApi()
+     this.getAccApi()
+  },
   methods: {
-      showProductModal() {
+    changeFilter(id){
+      this.displayProductType=id;
+    },
+     async getClothesApi(){
+         await api.getClothes().then(resp => {
+           this.clothes = resp.data
+         });
+      },
+      async getAccApi(){
+         await api.getAccessories().then(resp => {
+           this.accessories = resp.data
+         });
+      },
+      showProductModal(product) {
           this.productModalVisible = true
+          this.modalP = product;
       },
       closeProductModal() {
           this.productModalVisible = false

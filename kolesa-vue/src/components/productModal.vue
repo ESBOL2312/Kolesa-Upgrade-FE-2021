@@ -6,8 +6,8 @@
             </button>
             <div class="modal__left-side">
                 <div class="modal__left-side__media-block">
-                    <img src="@/assets/image 7.png" class="modal__left-side__media-block__product-img"
-                        alt="Футболка Эволюционируй или сдохни" width="100%">
+                    <img :src="productData.mainImage" class="modal__left-side__media-block__product-img"
+                        :alt="productData.title" width="100%">
                     <div class="slide-block d-flex">
                         <img src="@/assets/img-1.png" class="slide-item active"
                             alt=" Футболка Эволюционируй или сдохни серый" width="50" height="50">
@@ -35,13 +35,13 @@
             <div class="modal__right-side">
                 <div class="modal__right-side__title">
                     <h2 class="title-1 mb-8 fw-4">
-                        Футболка "Эволюционируй или сдохни"
+                        {{productData.title}}
                     </h2>
                 </div>
                 <div class="action-block d-flex mb-24">
                     <div>
                         <h2 class="title-1 action-block__cost mb-8 fw-6">
-                            100 баллов
+                            {{productData.price}} баллов
                         </h2>
                         <button class="btn primary-btn" type="button">
                             Заказать
@@ -67,24 +67,14 @@
                             Цвета:
                         </h4>
                         <div class="product-variant__color__variants">
-                            <input class="custom-radio" type="radio" id="colorChoice1" name="contact" value="blue">
-                            <label class="radio-choice-btn" for="colorChoice1">
-                                <div class="radio-choice-btn__color mr-8" style="background:#00458A">
-                                </div>
-                                <span class="radio-choice-btn__text">Синий</span>
-                            </label>
-                            <input class="custom-radio" type="radio" id="colorChoice2" name="contact" value="dimgray">
-                            <label class="radio-choice-btn" for="colorChoice2">
-                                <div class="radio-choice-btn__color mr-8" style="background:#EFE8D8">
-                                </div>
-                                <span class="radio-choice-btn__text">Бежевый</span>
-                            </label>
-                            <input class="custom-radio" type="radio" id="colorChoice3" name="contact" value="gray">
-                            <label class="radio-choice-btn" for="colorChoice3">
-                                <div class="radio-choice-btn__color mr-8" style="background:#D4D4DA">
-                                </div>
-                                <span class="radio-choice-btn__text">Серый</span>
-                            </label>
+                            <template v-for="(color, index) in productData.colors">
+                                <input :key="index" class="custom-radio" type="radio" :id="`colorChoice-${index}`" name="contact" :value="color.label">
+                                <label :key="index" class="radio-choice-btn" :for="`colorChoice-${index}`">
+                                    <div class="radio-choice-btn__color mr-8" :style="`background:${color.color}`">
+                                    </div>
+                                    <span class="radio-choice-btn__text">{{color.label}}</span>
+                                </label>
+                            </template>
                         </div>
                     </div>
                     <div class="product-variant__color mb-24">
@@ -101,7 +91,7 @@
                             Детали:
                         </h4>
                         <p class="info-block__description detail">
-                            Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%
+                            {{productData.description}}
                         </p>
                     </div>
                     <div class="info-block">
@@ -124,6 +114,9 @@ export default {
       isVisible:{
           type: Boolean,
           default: false
+      },
+      productData: {
+          type: Object
       }
   },
    data() {
