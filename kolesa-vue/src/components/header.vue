@@ -1,0 +1,137 @@
+<template>
+    <div class="container app-header">
+        <div class="header">
+            <div class="header__block">
+            <div>
+                <img src="@/assets/KolesaGroup.png"  height="35" width="215" alt="Kolesa logo">
+            </div>
+            <div class="header__search">
+                <label for="search"><div class="header__search__img" type="button" >
+                <img src="@/assets/search-big.svg" alt="search" height="24" width="24">
+                </div>
+                </label>
+                <input name="search" id="search" class="header__search__input" type="search" placeholder="Поиск">
+            </div>
+            </div>
+            <button class="header__info">
+                <div>
+                    <img class="header__avatar" src="@/assets/Mask Group.png" alt="avatar" width="44" height="44">
+                </div>
+                <div>
+                    <div class="header__name">Мортиджан</div>
+                    <div class="header__pts">300 баллов</div>
+                </div>
+            </button>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    name: 'header'
+}
+</script>
+<style lang="scss">
+    @import "@/assets/style/vars.scss";
+.header {
+    display: flex;
+
+    &__block {
+        display: flex;
+        align-items: center;
+        margin: 32px 0 0 0;
+    }
+
+    &__search {
+        position: relative;
+        margin-left: 66px;
+
+        &__img {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            margin: 10px 16px 10px 16px;
+            background: $backgroundGray;
+            border: none;
+            transition: 0.2s linear;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        &__input {
+            width: 308px;
+            height: 44px;
+            background: $backgroundGray;
+            border-radius: 8px;
+            font-family: $primaryFont;
+            font-style: normal;
+            font-weight: $normalFont;
+            font-size: 18px;
+            line-height: 28px;
+            color: #888b94;
+            border: none;
+            padding: 8px 0 8px 56px;
+
+            &:active {
+                border: $inputBorder;
+            }
+
+            &:focus {
+                border: $inputBorder;
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        margin-left: 584px;
+        transition: 0.2s linear;
+        border: none;
+        background: none;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__avatar {
+        margin-right: 16px;
+        border: none;
+        background: none;
+        transition: 0.2s linear;
+        padding: 0;
+    }
+
+    &__name {
+        display: block;
+        font-family: $primaryFont;
+        font-style: normal;
+        padding: 0;
+        font-weight: $BoldFont;
+        font-size: 14px;
+        line-height: 24px;
+        color: #2a81dd;
+        border: none;
+        background: none;
+        transition: 0.2s linear;
+    }
+
+    &__pts {
+        display: block;
+        font-family: $primaryFont;
+        font-style: normal;
+        font-weight: $normalFont;
+        font-size: 13px;
+        line-height: 20px;
+        color: $primaryColor;
+        border: none;
+        background: none;
+        transition: 0.2s linear;
+        padding: 0;
+    }
+}
+</style>

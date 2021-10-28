@@ -1,32 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header-c />
+    <div class="container app-main">
+        <main class="main">
+          <main-nav />
+          <div class="main__content">
+            <main-info />
+            <main-product-list />
+          </div>
+        </main>
     </div>
-    <router-view/>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import headerC from '@/components/header'
+import mainNav from '@/components/mainNav'
+import mainInfo from '@/components/mainInfo'
+import mainProductList from './components/mainProductList'
+export default {
+  name:'template',
+  components: {
+    headerC,
+    mainNav,
+    mainInfo,
+    mainProductList,
   }
 }
+</script>
+<style lang="scss">
+    @import "@/assets/style/vars.scss";
+    @import "@/assets/style/main.scss";
 </style>
