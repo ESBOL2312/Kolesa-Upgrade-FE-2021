@@ -281,3 +281,11 @@ button:hover {
     transition: all 0.4s;
     display: none;
 }
+.main--clothes__imageCover {
+    position: relative;
+}
+.main--clothes__new {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}

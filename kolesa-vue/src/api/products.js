@@ -8,4 +8,8 @@ const getAccessories = () => {
     return axios.get('q3OPxRyEcPvP/data')
 }
 
-export default {getAccessories, getClothes}
+const getuserInfo = () => {
+    return axios.get('7ZW3y5GAuIge/data')
+}
+
+export default {getAccessories, getClothes, getuserInfo}

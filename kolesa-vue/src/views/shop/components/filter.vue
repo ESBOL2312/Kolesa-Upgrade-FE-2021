@@ -44,7 +44,6 @@ export default {
   watch: {
     // whenever question changes, this function will run
     displayProductType: function (newQuestion) {
-        console.log('fiketr change', newQuestion)
      this.$emit('filterChange',newQuestion)
     }
   },

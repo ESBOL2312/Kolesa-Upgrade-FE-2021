@@ -2,39 +2,51 @@
     <div class="container app-header">
         <div class="header">
             <div class="header__block">
-            <div>
-                <img src="@/assets/KolesaGroup.png"  height="35" width="215" alt="Kolesa logo">
+                <router-link :to="{name:'Home'}"> 
+                    <img src="@/assets/KolesaGroup.png"  height="35" width="215" alt="Kolesa logo">
+                </router-link>
+                <header-search></header-search>
             </div>
-            <div class="header__search">
-                <label for="search"><div class="header__search__img" type="button" >
-                <img src="@/assets/search-big.svg" alt="search" height="24" width="24">
-                </div>
-                </label>
-                <input name="search" id="search" class="header__search__input" type="search" placeholder="Поиск">
-            </div>
-            </div>
-            <button class="header__info">
-                <div>
-                    <img class="header__avatar" src="@/assets/Mask Group.png" alt="avatar" width="44" height="44">
-                </div>
-                <div>
-                    <div class="header__name">Мортиджан</div>
-                    <div class="header__pts">300 баллов</div>
-                </div>
-            </button>
+            <user-info :userInfo="userInfo"></user-info>
         </div>
     </div>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import headerSearch  from './search.vue'
+import userInfo  from './userInfo.vue'
 export default {
-    name: 'header'
+    name: 'header',
+    components: {
+        headerSearch,
+        userInfo
+    },
+    computed: {
+      ...mapGetters([
+          'userInfo'
+      ])
+  },
+  methods: {
+        ...mapActions([
+            'fetchUserInfo',
+        ]),
+  },
+  created() {
+      this.fetchUserInfo().then(()=>{
+        this.$emit('userLoaded', this.userInfo)
+      })
+      
+  }
 }
 </script>
 <style lang="scss">
     @import "@/assets/style/vars.scss";
+    .app-header{
+        width: 100%;
+    }
 .header {
     display: flex;
-
+    justify-content: space-between;
     &__block {
         display: flex;
         align-items: center;
@@ -104,6 +116,7 @@ export default {
         background: none;
         transition: 0.2s linear;
         padding: 0;
+        border-radius: 50%;
     }
 
     &__name {
