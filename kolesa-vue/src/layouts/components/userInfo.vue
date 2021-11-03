@@ -20,13 +20,6 @@
 
 export default {
   name: "userInfo",
-  props:['userInfo', 'userScore'],
-  computed:{
-    userScore(){
-      if(this.userScore!==null){
-        return
-      }
-    }
-  }
+  props:['userInfo'],
 };
 </script>
