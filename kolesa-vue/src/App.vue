@@ -1,33 +1,52 @@
 <template>
   <div id="app">
-    <header-c />
+    <header-c  @userLoaded="userInfoSet" :userScore="score"/>
     <div class="container app-main">
         <main class="main">
           <main-nav />
           <div class="main__content">
-            <main-info />
-            <main-product-list />
+            <transition name="fade" mode="out-in">
+             <router-view></router-view>
+             </transition>
           </div>
         </main>
     </div>
   </div>
 </template>
 <script>
-import headerC from '@/components/header'
-import mainNav from '@/components/mainNav'
-import mainInfo from '@/components/mainInfo'
-import mainProductList from './components/mainProductList'
+import headerC from '@/layouts/components/header'
+import mainNav from '@/layouts/components/mainNav'
+
 export default {
   name:'template',
   components: {
     headerC,
     mainNav,
-    mainInfo,
-    mainProductList,
+  },
+  data(){
+    return {
+      userInfo:null,
+      score:null
+    }
+  },
+  methods:{
+    userInfoSet(user){
+      this.userInfo = user
+    },
   }
 }
 </script>
 <style lang="scss">
     @import "@/assets/style/vars.scss";
     @import "@/assets/style/main.scss";
+    .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

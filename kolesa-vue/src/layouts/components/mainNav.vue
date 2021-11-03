@@ -1,14 +1,12 @@
 <template>
   <nav class="nav">
     <div class="nav__block">
-        <a class="nav__link" href="#">
-          Оргсхема
-        </a>
+        <router-link class="nav__link" :to="{name: 'GetScores'}" exact active-class="nav__link-bold">
+          Получить баллы
+        </router-link>
         <a class="nav__link" href="#">
             Kolesa Team</a>
-      <a class="nav__link nav__link-bold" href="#"
-        >Kolesa Shop</a
-      >
+      <router-link class="nav__link" :to="{name: 'Home'}" exact active-class="nav__link-bold">Kolesa Shop</router-link>
       <a class="nav__link" href="#">Картина компании</a>
       <a class="nav__link" href="#">Новости</a>
       <a class="nav__link" href="#">Education</a>
